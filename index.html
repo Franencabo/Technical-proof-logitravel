@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Technical Proof Logitravel</title>
+</head>
+
+<body>
+    <main>
+        <section class="box">
+            <h2 class="box--title">This is a technical proof</h2>
+            <p class="box--subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. </p>
+            <ul class="box--list">
+                <li class="box--list__item">Item 1</li>
+                <li class="box--list__item">Item 2</li>
+                <li class="box--list__item">Item 3</li>
+                <li class="box--list__item">Item 4</li>
+            </ul>
+            <div class="box--buttons">
+                <div>
+                    <button id="last-change" class="btn btn--border btn--arrow" type="submit"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+                    <button id="delete" class="btn btn--border" type="submit">Delete</button>
+                </div>
+                <button class="btn open-prompt" type="button" data-open="prompt">Add</button>
+            </div>
+        </section>
+    </main>
+
+    <section class="prompt" id="prompt" data-animation="animation">
+        <div class="prompt--content">
+            <form action="" class="prompt--form">
+                <label for="add-input">Add item to list</label>
+                <input type="text" name="add-input" id="add-input" placeholder="Type the text here">
+                <div class="prompt--buttons">
+                    <button class="btn" type="submit" id="add-button">Add</button>
+                    <button class="btn btn--border close-prompt" aria-label="close prompt" data-close>Cancel</button>
+                </div>
+            </form>
+        </div>
+
+    </section>
+
+
+    <script src="modal.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
