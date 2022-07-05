@@ -1,3 +1,9 @@
+
+@import "variables";
+@import "mixins";
+
+
+
 *{
     margin:0;
     padding: 0;
@@ -14,7 +20,7 @@ main {
     height: 100vh;
     display: grid;
     place-content: center;
-    background: rgb(1#A1C4FD);
+    background: #A1C4FD;
     background: linear-gradient(145deg, rgba(161,196,253,1) 0%, rgba(194,233,251,1) 100%);
 
 }
@@ -47,17 +53,24 @@ main {
     margin-bottom: 30px;
 }
 
-.box--list__item, a{
+.box--list__item{
     font-size: 18px;
     padding: 9px;
+
+}
+
+a {
+    display: block;
     text-decoration: none;
     color: #333;
 }
 
-.box--list__item:hover, a:hover{
+.box--list__item:hover,
+a:hover{
     background-color: #324BFF;
     color: white;
 }
+
 
 .box--buttons{
     display: flex;

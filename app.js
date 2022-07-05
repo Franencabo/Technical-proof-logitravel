@@ -33,14 +33,15 @@ function getItems(){
   const li = document.createElement("li");
   // Add class
   li.className = "box--list__item";
-  // Create text node and appen to li
-  li.appendChild(document.createTextNode(item));
+ 
+ 
   // Create new link element
   const link = document.createElement("a");
-  // Add class
-  link.className = "hola";
+ 
   // Append the link to li
   li.appendChild(link);
+   // Create text node and appen to li
+  link.appendChild(document.createTextNode(item));
 
   // Append the li to ul
   boxList.appendChild(li);
@@ -57,14 +58,15 @@ function addItem(e) {
   const li = document.createElement("li");
   // Add class
   li.className = "box--list__item";
-  // Create text node and appen to li
-  li.appendChild(document.createTextNode(input.value));
+  
+  
   // Create new link element
   const link = document.createElement("a");
-  // Add class
-  link.className = "hola";
+  
   // Append the link to li
   li.appendChild(link);
+  // Create text node and appen to li
+  link.appendChild(document.createTextNode(input.value));
 
   // Append the li to ul
   boxList.appendChild(li);
