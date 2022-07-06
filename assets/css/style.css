@@ -347,6 +347,7 @@ template {
 
 body {
   font-family: "Montserrat", sans-serif;
+  font-weight: 400;
   color: #333;
   position: relative;
 }
@@ -366,15 +367,17 @@ main {
   box-shadow: 0px 5px 12px #0000001F;
   padding: 50px;
 }
-
 .box--title {
-  text-align: center;
   font-size: 40px;
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 500;
 }
 
 .box--subtitle {
-  text-align: center;
   font-size: 18px;
+  font-size: 1.125rem;
+  text-align: center;
   line-height: 1.4;
   margin-bottom: 35px;
 }
@@ -386,10 +389,19 @@ main {
   padding: 22px 26px;
   margin-bottom: 30px;
 }
-
 .box--list__item {
   font-size: 18px;
+  font-size: 1.125rem;
   padding: 9px;
+}
+.box--list__item:hover {
+  background-color: #324BFF;
+  color: white !important;
+}
+
+.box--buttons {
+  display: flex;
+  justify-content: space-between;
 }
 
 a {
@@ -398,15 +410,9 @@ a {
   color: #333;
 }
 
-.box--list__item:hover,
 a:hover {
   background-color: #324BFF;
   color: white;
-}
-
-.box--buttons {
-  display: flex;
-  justify-content: space-between;
 }
 
 .btn {
@@ -416,10 +422,10 @@ a:hover {
   border: none;
   border-radius: 50px;
   font-size: 16px;
+  font-weight: 500;
   background-color: #324BFF;
   color: white;
 }
-
 .btn--border {
   background-color: white;
   border: 1px solid #324BFF;
@@ -429,6 +435,20 @@ a:hover {
 
 .btn--arrow {
   min-width: 81px;
+}
+
+label {
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+
+input {
+  padding: 19px 21px;
+  font-size: 22px;
+  color: #999999;
+  background-color: #F7F7F7;
+  border: 1px solid #CCCCCC;
+  margin-bottom: 10px;
 }
 
 .prompt {
@@ -446,12 +466,6 @@ a:hover {
   opacity: 0;
   transition: all 0.35s ease-in;
 }
-
-.prompt.is-visible {
-  visibility: visible;
-  opacity: 1;
-}
-
 .prompt--content {
   position: relative;
   cursor: default;
@@ -467,24 +481,15 @@ a:hover {
   width: 700px;
 }
 
-label {
-  font-size: 18px;
-  padding-bottom: 20px;
-}
-
-input {
-  padding: 19px 21px;
-  font-size: 22px;
-  color: #999999;
-  background-color: #F7F7F7;
-  border: 1px solid #CCCCCC;
-  margin-bottom: 10px;
-}
-
 .prompt--buttons {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
+}
+
+.prompt.is-visible {
+  visibility: visible;
+  opacity: 1;
 }
 
 [data-animation=animation] .prompt--content {

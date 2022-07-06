@@ -1,27 +1,5 @@
 
-
-//Mixins
-
-
-//No paramétricos
-@mixin section{
-    max-width: 100%;
-    padding: 60px 3%;
-}
-
-@mixin wrap{
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-@mixin flex{
-    display:flex;
-    flex-flow: row wrap;
-}
-
-//Paramétricos
-
-//mixin para convertir los pixeles en rem 
+//mixin for pixel conversion to rem
 @mixin font-size($size){
     $rem: $size/16;
     font-size: $size * 1px;
@@ -29,9 +7,27 @@
 
 }
 
-@mixin box($flex-basis, $color, $text-align, $z-index){
-    flex-basis:$flex-basis;
-    color: $color;
-    text-align: $text-align;
-    z-index:$z-index;
-}
+// mixin to get element
+@mixin t-bem-element( $elements... ) {
+    $elements-list: ();
+    $prefix-selector: '#{&}__';
+    @each $element in $elements {
+      $elements-list: append( $elements-list , ( $prefix-selector + $element ) , comma );
+    }
+    @at-root #{$elements-list} {
+      @content;
+    }
+  }
+  
+
+  //mixin to get modifiers
+  @mixin t-bem-modifier( $modifiers... ) {
+    $modifiers-list: ();
+    $prefix-selector: '#{&}--';
+    @each $modifier in $modifiers {
+      $modifiers-list: append( $modifiers-list , ( $prefix-selector + $modifier ) , comma );
+    }
+    @at-root #{$modifiers-list} {
+      @content;
+    }
+  }

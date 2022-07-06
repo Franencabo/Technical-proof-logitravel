@@ -11,8 +11,9 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
+    font-family: $base-font;
+    font-weight: $regular;
+    color: $black;
     position: relative;
 }
 
@@ -20,7 +21,7 @@ main {
     height: 100vh;
     display: grid;
     place-content: center;
-    background: #A1C4FD;
+    background: $light-purple;
     background: linear-gradient(145deg, rgba(161,196,253,1) 0%, rgba(194,233,251,1) 100%);
 
 }
@@ -29,53 +30,60 @@ main {
     background-color: white;
     max-width: 900px;
     border-radius: 20px;
-    box-shadow: 0px 5px 12px #0000001F;
+    box-shadow: 0px 5px 12px $medium-grey;
     padding: 50px;
-}
 
-.box--title{
-    text-align: center;
-    font-size: 40px;
-}
+    @include t-bem-modifier(title){
+        @include font-size(40);
+        text-align: center;
+        font-weight: $medium;
+    }
 
-.box--subtitle{
-    text-align: center;
-    font-size: 18px;
-    line-height: 1.4;
-    margin-bottom: 35px;
-}
 
-.box--list{
-    list-style: none;
-    background-color: #F7F7F7;
-    border: 1px solid #CCCCCC;
-    padding: 22px 26px;
-    margin-bottom: 30px;
-}
+    @include t-bem-modifier(subtitle){
+        @include font-size(18);
+        text-align: center;
+        line-height: 1.4;
+        margin-bottom: 35px;
+    }
 
-.box--list__item{
-    font-size: 18px;
-    padding: 9px;
+    @include t-bem-modifier(list){
+        list-style: none;
+        background-color: $light-grey;
+        border: 1px solid $dark-grey;
+        padding: 22px 26px;
+        margin-bottom: 30px;
+
+        @include t-bem-element(item){
+            @include font-size(18);
+            padding: 9px;
+            &:hover{
+                background-color: $blue;
+                color: white !important;
+            }
+        }
+    }
+
+
+    @include t-bem-modifier(buttons){
+        display: flex;
+        justify-content: space-between
+    }
+    
 
 }
 
 a {
     display: block;
     text-decoration: none;
-    color: #333;
+    color: $black;
 }
 
-.box--list__item:hover,
 a:hover{
-    background-color: #324BFF;
+    background-color: $blue;
     color: white;
 }
 
-
-.box--buttons{
-    display: flex;
-    justify-content: space-between
-}
 
 .btn{
     padding: 15px 30px;
@@ -84,58 +92,23 @@ a:hover{
     border: none;
     border-radius: 50px;
     font-size: 16px;
-    background-color:#324BFF;
+    font-weight: $medium;
+    background-color:$blue;
     color: white;
+
+    @include t-bem-modifier(border){
+        background-color: white;
+        border: 1px solid $blue;
+        color:$blue;
+        min-width: 138px;
+    }
+
+    @include t-bem-modifier(arrow){
+        min-width: 81px;
+    }
+    
 }
 
-.btn--border{
-    background-color: white;
-    border: 1px solid #324BFF;
-    color:#324BFF;
-    min-width: 138px;
-}
-
-.btn--arrow{
-    min-width: 81px;
-}
-
- 
-.prompt {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: grid;
-    place-content: center;
-    border: 1px solid black;
-    background-color: rgba(0,0,0, .3);
-    cursor: pointer;
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.35s ease-in;
-}
-
-.prompt.is-visible {
-    visibility: visible;
-    opacity: 1;
-  }
-
-
-.prompt--content{
-    position: relative;
-    cursor: default;
-    background-color: white;
-    border-radius: 20px;
-}
-
-.prompt--form{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 50px;
-    width: 700px;
-}
 
 label {
     font-size: 18px;
@@ -146,27 +119,8 @@ input {
     padding: 19px 21px;
     font-size: 22px;
     color: #999999;
-    background-color: #F7F7F7;
-    border: 1px solid #CCCCCC;
+    background-color: $light-grey;
+    border: 1px solid $dark-grey;
     margin-bottom: 10px;
 }
 
-
-.prompt--buttons{
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-}
-
-
-[data-animation="animation"] .prompt--content {
-    opacity: 0;
-    transform: translateY(-100%);
-    transition: all 0.8s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  }
-   
-  [data-animation="animation"].is-visible .prompt--content {
-    opacity: 1;
-    transform: none;
-    transition-delay: 0.2s;
-  }
