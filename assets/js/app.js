@@ -15,7 +15,7 @@ function loadEventListeners() {
   // Add item event
   addBtn.addEventListener("click", addItem);
   // Remove item event
-  boxList.addEventListener("doubleclick", removeItem);
+  boxList.addEventListener("dblclick", removeItem);
   // Remove last item event
   lastChange.addEventListener("click",  removeLastItem);
   // Clear item event
