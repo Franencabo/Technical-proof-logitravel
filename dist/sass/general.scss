@@ -26,52 +26,7 @@ main {
 
 }
 
-.box {
-    background-color: white;
-    max-width: 900px;
-    border-radius: 20px;
-    box-shadow: 0px 5px 12px $medium-grey;
-    padding: 50px;
 
-    @include t-bem-modifier(title){
-        @include font-size(40);
-        text-align: center;
-        font-weight: $medium;
-    }
-
-
-    @include t-bem-modifier(subtitle){
-        @include font-size(18);
-        text-align: center;
-        line-height: 1.4;
-        margin-bottom: 35px;
-    }
-
-    @include t-bem-modifier(list){
-        list-style: none;
-        background-color: $light-grey;
-        border: 1px solid $dark-grey;
-        padding: 22px 26px;
-        margin-bottom: 30px;
-
-        @include t-bem-element(item){
-            @include font-size(18);
-            padding: 9px;
-            &:hover{
-                background-color: $blue;
-                color: white !important;
-            }
-        }
-    }
-
-
-    @include t-bem-modifier(buttons){
-        display: flex;
-        justify-content: space-between
-    }
-    
-
-}
 
 a {
     display: block;

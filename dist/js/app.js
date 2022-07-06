@@ -2,6 +2,7 @@
 const form = document.querySelector(".prompt--form");
 const addBtn = document.querySelector("#add-button")
 const boxList = document.querySelector(".box--list");
+const lastChange = document.querySelector("#last-change");
 const input = document.querySelector("#add-input");
 const clearBtn = document.querySelector("#delete");
 
@@ -11,11 +12,13 @@ loadEventListeners();
 function loadEventListeners() {
   // DOM load event
   document.addEventListener('DOMContentLoaded', getItems);
-  // Add task event
+  // Add item event
   addBtn.addEventListener("click", addItem);
-  // Remove task event
-  boxList.addEventListener("click", removeItem);
-  // Clear task event
+  // Remove item event
+  boxList.addEventListener("doubleclick", removeItem);
+  // Remove last item event
+  lastChange.addEventListener("click",  removeLastItem);
+  // Clear item event
   clearBtn.addEventListener("click", clearItems);
 
 }
@@ -59,7 +62,6 @@ function addItem(e) {
   // Add class
   li.className = "box--list__item";
   
-  
   // Create new link element
   const link = document.createElement("a");
   
@@ -96,6 +98,15 @@ function storeItemsInLocalStorage(item){
   localStorage.setItem('items', JSON.stringify(items));
 }
 
+
+// Clear items
+function removeLastItem() {
+
+  while (boxList.lastChild) {
+    boxList.removeChild(boxList.lastChild);
+  }
+  console.log(boxList.lastChild);
+}
 
 
 // Remove item
