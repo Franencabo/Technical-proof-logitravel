@@ -99,14 +99,16 @@ function storeItemsInLocalStorage(item){
 }
 
 
-// Clear items
+// Remove only last item
 function removeLastItem() {
 
   while (boxList.lastChild) {
-    boxList.removeChild(boxList.lastChild);
+    boxList.lastChild.remove();
   }
-  console.log(boxList.lastChild);
+ 
+
 }
+
 
 
 // Remove item
@@ -146,7 +148,7 @@ function clearItems() {
   clearItemsFromLocalStorage();
 }
 
-// Clear Tasks from local storage
+// Clear items from local storage
 function clearItemsFromLocalStorage(){
   localStorage.clear();
 }
