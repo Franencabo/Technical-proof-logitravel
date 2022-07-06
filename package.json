@@ -1,0 +1,27 @@
+{
+  "name": "prueba-tecnica-logitravel",
+  "version": "1.0.0",
+  "description": "",
+  "default": "app.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --dist-dir ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Franencabo/Technical-proof-logitravel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Franencabo/Technical-proof-logitravel/issues"
+  },
+  "homepage": "https://github.com/Franencabo/Technical-proof-logitravel#readme",
+  "devDependencies": {
+    "parcel": "^2.6.2"
+  },
+  "dependencies": {
+    "core-js": "^3.23.3",
+    "regenerator-runtime": "^0.13.9"
+  }
+}
